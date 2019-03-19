@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 5</title>
+    <style>
+    body{
+        margin: 2%;
+        border: 1px solid black;
+        background-color: #b3b3b3;
+    }
+    #image{
+        line-height:325px;
+        width: 388px;
+        height: 325px;
+        border:5px solid black;
+        margin:0 auto;
+        background-repeat: no-repeat;
+        color:#FFFFFF;
+        text-align: center;
+        background-color: #8e68ff;
+        background-size: 100%;
+        margin-bottom:25px;
+        font-size:150%;
+    }
+    .preview{
+        width:10%;
+        margin-left:17%;
+        border: 10px solid black;
+    }
+    img{
+        width:95%;
+    }
+    h1{
+        text-align: center;
+    }
+    </style>
+
+    <script>
+    // I used Two functions here.  Starter idea at:
+    // https://codepen.io/ColleenEMc/pen/XmZzWw
+    // * In this function you should
+    //    1) change the url for the background image of the div with the id = "image"
+    //    to the source file of the preview image
+    //
+    //    2) Change the text  of the div with the id = "image"
+    //    to the alt text of the preview image
+    //    */
+    function upDate(previewPic){
+      var src = previewPic.getAttribute("src");
+      var alt = previewPic.getAttribute("alt");
+      document.getElementById('image').style.backgroundImage = "url('" + src + "')";
+      document.getElementById('image').style.backgroundSize= "cover";
+      document.getElementById('image').innerHTML = alt;
+	 }
+
+	  function unDo(){
+     /* In this function you should
+    1) Update the url for the background image of the div with the id = "image"
+    back to the orginal-image.  You can use the css code to see what that original URL was
+
+    2) Change the text  of the div with the id = "image"
+    back to the original text.  You can use the html code to see what that original text was
+    */
+
+    document.getElementById('image').style.backgroundImage = "none";
+    document.getElementById('image').innerHTML = "Hover or tab over/into an image below";
+	 }
+
+    </script>
+</head>
+
+<body>
+    <h1>Challenge 5</h1>
+        <div id = "image">
+            Hover or tab over/into an image below.
+        </div>
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            alt = "French Polynesia"
+            src = "http://www.eccentrichotels.com/wp-content/uploads/2012/10/Hilton-Bora-Bora-Nui-Presidential-Suite.jpg"
+            onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview"
+            alt = "Viti Levu"
+            src = "https://www.islands.com/sites/islands.com/files/styles/655_1x_/public/import/2013/files/_images/201304/vitilevu.jpg?itok=JSZZuMD_"
+            onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+        <!-- Your code goes in the img tag below.  Make sure to react to "hovering" and "tabbing": -->
+        <img class = "preview" tabindex = "1"
+            alt = "Mamanucas"
+            src = "https://www.islands.com/sites/islands.com/files/styles/655_1x_/public/import/2013/files/_images/201304/monuriki.jpg?itok=NMfqB70g"
+            onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+        <img class = "preview" tabindex = "1"
+            alt = "Falls of Taveuni"
+            src = "https://www.islands.com/sites/islands.com/files/styles/655_1x_/public/import/2013/files/_images/201304/taveuni.jpg?itok=q2hIDxD8"
+            onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+        <img class = "preview" tabindex = "1"
+              alt = "Likuliku Lagoon Resort"
+              src = "https://www.islands.com/sites/islands.com/files/styles/655_1x_/public/import/2013/files/_images/201304/likuliku.jpg?itok=uMxebbNp"
+              onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+        <img class = "preview" tabindex = "1"
+              alt = "Qamea"
+              src = "https://www.islands.com/sites/islands.com/files/styles/655_1x_/public/import/2013/files/_images/201304/qamea.jpg?itok=JvBxWfAK"
+              onmouseover = "upDate(this)" onmouseleave = "unDo()";>
+
+</body>
+</html>
